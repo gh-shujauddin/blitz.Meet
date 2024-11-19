@@ -9,29 +9,35 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 
-private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
-)
-
-private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
-
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
+val LightColorScheme = lightColorScheme(
+    primary = Blue,
     onPrimary = Color.White,
+    primaryContainer = LightGray,
+    onPrimaryContainer = DarkBlue,
+    secondary = DarkBlue,
     onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+    background = LightGray,
+    onBackground = Gray,
+    surface = Color.White,
+    onSurface = Gray
 )
+
+val DarkColorScheme = darkColorScheme(
+    primary = Blue,
+    onPrimary = Color.White,
+    primaryContainer = DarkBlue,
+    onPrimaryContainer = LightGray,
+    secondary = Gray,
+    onSecondary = Color.White,
+    background = Gray,
+    onBackground = LightGray,
+    surface = DarkBlue,
+    onSurface = LightGray
+)
+
 
 @Composable
 fun BlitzMeetTheme(
@@ -53,6 +59,7 @@ fun BlitzMeetTheme(
     MaterialTheme(
         colorScheme = colorScheme,
         typography = Typography,
+        shapes = Shapes,
         content = content
     )
 }
